@@ -56,15 +56,15 @@
     <script>
       window.googletag = window.googletag || {cmd: []};
       googletag.cmd.push(function() {
-        googletag.defineSlot('/23313062945/SSPA', [300, 250], 'div-gpt-ad-1767065130603-0').addService(googletag.pubads());
-        googletag.pubads().enableSingleRequest();
-        googletag.enableServices();
-      });
-    </script>
-    <script>
-      window.googletag = window.googletag || {cmd: []};
-      googletag.cmd.push(function() {
-        googletag.defineOutOfPageSlot('/23313062945/SSPA', 'div-gpt-ad-1767065130604-0').addService(googletag.pubads());
+        var mapping = googletag.sizeMapping()
+          .addSize([0, 0], [[300, 250]])  // Default size
+          .addSize([1, 1], [])            // OOP (empty array = out-of-page)
+          .build();
+    
+        googletag.defineSlot('/23313062945/SSPA', [[300, 250]], 'div-gpt-ad-1767065130603-0')
+          .defineSizeMapping(mapping)
+          .addService(googletag.pubads());
+        
         googletag.pubads().enableSingleRequest();
         googletag.enableServices();
       });
@@ -104,11 +104,11 @@
             and vibrant communities ready to support beginners.
         </p>
         <div class="ad-placeholder">
-            <div id='div-gpt-ad-1767065130604-0'>
+            <!-- <div id='div-gpt-ad-1767065130604-0'>
                 <script>
                     googletag.cmd.push(function () { googletag.display('div-gpt-ad-1767065130604-0'); });
                 </script>
-            </div>
+            </div> -->
         </div>
     </div>
 </body>
