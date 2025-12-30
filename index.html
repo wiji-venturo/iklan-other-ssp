@@ -56,15 +56,11 @@
     <script>
       window.googletag = window.googletag || {cmd: []};
       googletag.cmd.push(function() {
+        // Define both slots
         googletag.defineSlot('/23313062945/SSPA', [300, 250], 'div-gpt-ad-1767065130603-0').addService(googletag.pubads());
-        googletag.pubads().enableSingleRequest();
-        googletag.enableServices();
-      });
-    </script>
-    <script>
-      window.googletag = window.googletag || {cmd: []};
-      googletag.cmd.push(function() {
         googletag.defineOutOfPageSlot('/23313062945/SSPA', 'div-gpt-ad-1767065130604-0').addService(googletag.pubads());
+        
+        // Call these ONCE, not multiple times
         googletag.pubads().enableSingleRequest();
         googletag.enableServices();
       });
